@@ -95,7 +95,7 @@ X.loc[1,14] = genhealth
 menthealth = form.slider('How many days have you had poor mental health over the past month?', min_value=0, max_value=30)
 X.loc[1,15] = menthealth
 
-physhealth = form.slider('how many days have you experienced an injury over th last month?', min_value=0, max_value=30)
+physhealth = form.slider('how many days have you experienced an injury over the last month?', min_value=0, max_value=30)
 X.loc[1,16] = physhealth
 
 sex = form.radio('Select your sex:', ['male','female'])
@@ -153,7 +153,7 @@ elif education == 'College graduate or higher':
     X.loc[1,20] = 6
 
 
-income = form.selectbox('choose your income range', ['less than $10,000','$10,000-$15,000','$15,000-$20,000', '$25,000-$30,000', '30,000-$35,000', '$35,000-$45,000', '$45,000-$75,000', '$75,000 or higher')
+income = form.selectbox('choose your income range', ['less than $10,000','$10,000-$15,000','$15,000-$20,000', '$25,000-$30,000', '30,000-$35,000', '$35,000-$45,000', '$45,000-$75,000', '$75,000 or higher'])
 if income = 'less than $10,000'
     x.loc[1,21] = 1
 elif income = '$10,000-$15,000'
