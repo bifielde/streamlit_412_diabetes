@@ -111,8 +111,32 @@ else:
     X.loc[1,18] = 0
 
 age = form.number_input('Enter your age in years', min_value = 1)
-X.loc[1,19] = age
-
+if age >= 80
+    X.loc[1,19] = 13
+elif age >= 75
+    X.loc[1,19] = 12
+elif age >= 70
+    X.loc[1,19] = 11
+elif age >= 65
+    X.loc[1,19] = 10
+elif age >= 60
+    X.loc[1,19] = 9
+elif age >= 55
+    X.loc[1,19] = 8
+elif age >= 50
+    X.loc[1,19] = 7
+elif age >= 45
+    X.loc[1,19] = 6
+elif age >= 40
+    X.loc[1,19] = 5
+elif age >= 35
+    X.loc[1,19] = 4
+elif age >= 30
+    X.loc[1,19] = 3
+elif age >= 25
+    X.loc[1,19] = 2
+else
+    X.loc[1,19] = 1
 education = form.selectbox('choose your education level:', ['Kindergarten or no school','Elementary school','Some high school','High school graduate or GED','Some college or technical school','College graduate or higher'])
 if education == 'Kindergarten or no school':
     X.loc[1,20] = 1
