@@ -120,7 +120,7 @@ X.loc[1,20] = education
 income = form.slider('score your income', min_value=0, max_value=8)
 X.loc[1,21] = income
 
-model_select = form.selectbox('choose which model to use', ['Random Forest Model', 'Gradient Boost Model']
+model_select = form.selectbox('choose which model to use', ['Random Forest Model', 'Gradient Boost Model'])
 
 form_submit = form.form_submit_button('Submit form')
 
