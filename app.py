@@ -136,5 +136,5 @@ if form_submit:
         if model_guess > threshold:
             st.write ("you may be at risk of diabetes. Please contact your primary care physician or a diabetes specialist and they may assist you further.")
         else:
-            st.write ("You are not likely to be at risk of diabetes. Be sure to keep up with your regularyl scheduled doctor's appointments")
+            st.write ("You are not likely to be at risk of diabetes. Be sure to keep up with your regularly scheduled doctor's appointments")
 
