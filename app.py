@@ -110,7 +110,7 @@ if diff_walk:
 else:
     X.loc[1,18] = 0
 
-age = form.number_input('Enter your age in years')
+age = form.number_input('Enter your age in years', min_value = 1)
 X.loc[1,19] = age
 
 education = form.selectbox('choose your education level:', ['Kindergarten or no school','Elementary school','Some high school','High school graduate or GED','Some college or technical school','College graduate or higher'])
