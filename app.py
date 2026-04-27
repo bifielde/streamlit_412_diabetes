@@ -111,31 +111,31 @@ else:
     X.loc[1,18] = 0
 
 age = form.number_input('Enter your age in years', min_value = 1)
-if age >= 80
+if age >= 80:
     X.loc[1,19] = 13
-elif age >= 75
+elif age >= 75:
     X.loc[1,19] = 12
-elif age >= 70
+elif age >= 70:
     X.loc[1,19] = 11
-elif age >= 65
+elif age >= 65:
     X.loc[1,19] = 10
-elif age >= 60
+elif age >= 60:
     X.loc[1,19] = 9
-elif age >= 55
+elif age >= 55:
     X.loc[1,19] = 8
-elif age >= 50
+elif age >= 50:
     X.loc[1,19] = 7
-elif age >= 45
+elif age >= 45:
     X.loc[1,19] = 6
-elif age >= 40
+elif age >= 40:
     X.loc[1,19] = 5
-elif age >= 35
+elif age >= 35:
     X.loc[1,19] = 4
-elif age >= 30
+elif age >= 30:
     X.loc[1,19] = 3
-elif age >= 25
+elif age >= 25:
     X.loc[1,19] = 2
-else
+else:
     X.loc[1,19] = 1
 
 education = form.selectbox('choose your education level:', ['Kindergarten or no school','Elementary school','Some high school','High school graduate or GED','Some college or technical school','College graduate or higher'])
@@ -154,21 +154,21 @@ elif education == 'College graduate or higher':
 
 
 income = form.selectbox('choose your income range', ['less than $10,000','$10,000-$15,000','$15,000-$20,000', '$25,000-$30,000', '30,000-$35,000', '$35,000-$45,000', '$45,000-$75,000', '$75,000 or higher'])
-if income = 'less than $10,000'
+if income = 'less than $10,000':
     x.loc[1,21] = 1
-elif income = '$10,000-$15,000'
+elif income = '$10,000-$15,000':
     x.loc[1,21] = 2
-elif income = '$15,000-$20,000'
+elif income = '$15,000-$20,000':
     x.loc[1,21] = 3
-elif income = '$25,000-$30,000'
+elif income = '$25,000-$30,000':
     x.loc[1,21] = 4
-elif income = '30,000-$35,000'
+elif income = '30,000-$35,000':
     x.loc[1,21] = 5
-elif income = '$35,000-$45,000'
+elif income = '$35,000-$45,000':
     x.loc[1,21] = 6
-elif income = '$45,000-$75,000'
+elif income = '$45,000-$75,000':
     x.loc[1,21] = 7
-elif income = '$75,000 or higher'
+elif income = '$75,000 or higher':
     x.loc[1,21] = 8
 
 model_select = form.selectbox('choose which model to use', ['Random Forest Model', 'Gradient Boost Model'])
