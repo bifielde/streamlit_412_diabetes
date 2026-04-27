@@ -90,13 +90,13 @@ if nodocbccost:
 else:
     X.loc[1,13] = 0
 
-genhealth = form.slider('score your general health', min_value=0, max_value=5)
+genhealth = form.slider('score your general health, with 1 being excellent and 5 being poor', min_value=1, max_value=5)
 X.loc[1,14] = genhealth
 
-menthealth = form.slider('score your mental health', min_value=0, max_value=30)
+menthealth = form.slider('How many days have you had poor mental health over the past month?', min_value=0, max_value=30)
 X.loc[1,15] = menthealth
 
-physhealth = form.slider('score your physical health', min_value=0, max_value=30)
+physhealth = form.slider('how many days have you experienced an injury over th last month?', min_value=0, max_value=30)
 X.loc[1,16] = physhealth
 
 sex = form.radio('Select your sex:', ['male','female'])
@@ -114,10 +114,22 @@ else:
 age = form.number_input('Enter your age in years')
 X.loc[1,19] = age
 
-education = form.selectbox('choose your education level: ', [1,2,3,4,5,6])
-X.loc[1,20] = education
+education = form.selectbox('choose your education level:', ['Kindergarten or no school','Elementary school','Some High School','High School Graduate or GED','Some college or technical school','College graduate or higher'])
+if education == 'Kindergarten or no school':
+    X.loc[1,20] = 1
+elif education == 'Elementary school':
+    X.loc[1,20] = 2
+elif education == 'Some high school':
+    X.loc[1,20] = 3
+elif education == 'High school graduate or GED':
+    X.loc[1,20] = 4
+elif education == 'Some college or technical school':
+    X.loc[1,20] = 5
+elif education == 'College graduate or higher':
+    X.loc[1,20] = 6
 
-income = form.slider('score your income', min_value=0, max_value=8)
+
+income = form.slider('score your income 1=less than $10k, 8=$75k or higher', min_value=0, max_value=8)
 X.loc[1,21] = income
 
 model_select = form.selectbox('choose which model to use', ['Random Forest Model', 'Gradient Boost Model'])
