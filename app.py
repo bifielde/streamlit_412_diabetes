@@ -1,7 +1,6 @@
 import streamlit as st
 import joblib as jb
 import pandas as pd
-import sklearn as skl
 
 @st.cache_resource()
 def load_model(model_name):
