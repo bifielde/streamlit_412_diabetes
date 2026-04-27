@@ -155,21 +155,21 @@ elif education == 'College graduate or higher':
 
 income = form.selectbox('choose your income range', ['less than $10,000','$10,000-$15,000','$15,000-$20,000', '$25,000-$30,000', '30,000-$35,000', '$35,000-$45,000', '$45,000-$75,000', '$75,000 or higher'])
 if income == 'less than $10,000':
-    x.loc[1,21] = 1
+    X.loc[1,21] = 1
 elif income == '$10,000-$15,000':
-    x.loc[1,21] = 2
+    X.loc[1,21] = 2
 elif income == '$15,000-$20,000':
-    x.loc[1,21] = 3
+    X.loc[1,21] = 3
 elif income == '$25,000-$30,000':
-    x.loc[1,21] = 4
+    X.loc[1,21] = 4
 elif income == '30,000-$35,000':
-    x.loc[1,21] = 5
+    X.loc[1,21] = 5
 elif income == '$35,000-$45,000':
-    x.loc[1,21] = 6
+    X.loc[1,21] = 6
 elif income == '$45,000-$75,000':
-    x.loc[1,21] = 7
+    X.loc[1,21] = 7
 elif income == '$75,000 or higher':
-    x.loc[1,21] = 8
+    X.loc[1,21] = 8
 
 model_select = form.selectbox('choose which model to use', ['Random Forest Model', 'Gradient Boost Model'])
 
