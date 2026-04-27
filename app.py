@@ -154,7 +154,7 @@ elif education == 'College graduate or higher':
 
 
 income = form.selectbox('choose your income range', ['less than $10,000','$10,000-$15,000','$15,000-$20,000', '$25,000-$30,000', '30,000-$35,000', '$35,000-$45,000', '$45,000-$75,000', '$75,000 or higher'])
-if income = 'less than $10,000':
+if income == 'less than $10,000':
     x.loc[1,21] = 1
 elif income == '$10,000-$15,000':
     x.loc[1,21] = 2
