@@ -114,7 +114,7 @@ else:
 age = form.number_input('Enter your age in years')
 X.loc[1,19] = age
 
-education = form.selectbox('choose your education level:', ['Kindergarten or no school','Elementary school','Some High School','High School Graduate or GED','Some college or technical school','College graduate or higher'])
+education = form.selectbox('choose your education level:', ['Kindergarten or no school','Elementary school','Some high school','High school graduate or GED','Some college or technical school','College graduate or higher'])
 if education == 'Kindergarten or no school':
     X.loc[1,20] = 1
 elif education == 'Elementary school':
