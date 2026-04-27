@@ -90,7 +90,7 @@ if nodocbccost:
 else:
     X.loc[1,13] = 0
 
-genhealth = form.slider('score your general health, with 1 being excellent and 5 being poor', min_value=1, max_value=5)
+genhealth = form.slider('score your general health on a scale of 1-5, with 1=excellent, 5=poor', min_value=1, max_value=5)
 X.loc[1,14] = genhealth
 
 menthealth = form.slider('How many days have you had poor mental health over the past month?', min_value=0, max_value=30)
