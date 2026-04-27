@@ -4,9 +4,10 @@ import pandas as pd
 import sklearn as skl
 @st.cache_resource()
 def load_model(model_name):
-    rfm = jb.load(model_name)
-    return (rfm)
+    model = jb.load(model_name)
+    return (model)
 rfm = load_model("best_rf_model.pkl")
+gbm = load_model("best_gb_model.pkl")
 X = pd.DataFrame()
 threshold = .35
 
@@ -119,13 +120,21 @@ X.loc[1,20] = education
 income = form.slider('score your income', min_value=0, max_value=8)
 X.loc[1,21] = income
 
+model_select = form.selectbox('choose which model to use', ['Random Forest Model', 'Gradient Boost Model')
 
 form_submit = form.form_submit_button('Submit form')
 
 if form_submit:
-    model_guess = rfm.predict_proba(X)[:, 1]
-    if model_guess > threshold:
-        st.write ("you may be at risk of diabetes. Please contact your primary care physician or a diabetes specialist and they may assist you further.")
-    else:
-        st.write ("You are not likely to be at risk of diabetes. Be sure to keep up with your regularyl scheduled doctor's appointments")
+    if model_select == 'Random Forest Model':
+        model_guess = rfm.predict_proba(X)[:, 1]
+        if model_guess > threshold:
+            st.write ("you may be at risk of diabetes. Please contact your primary care physician or a diabetes specialist and they may assist you further.")
+        else:
+            st.write ("You are not likely to be at risk of diabetes. Be sure to keep up with your regularyl scheduled doctor's appointments")
+    elif model_select == 'Gradient Boost Model':
+        model_guess = rfm.predict_proba(X)[:, 1]
+        if model_guess > threshold:
+            st.write ("you may be at risk of diabetes. Please contact your primary care physician or a diabetes specialist and they may assist you further.")
+        else:
+            st.write ("You are not likely to be at risk of diabetes. Be sure to keep up with your regularyl scheduled doctor's appointments")
 
