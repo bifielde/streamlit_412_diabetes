@@ -128,7 +128,7 @@ elif education == 'College graduate or higher':
     X.loc[1,20] = 6
 
 
-income = form.slider('score your income 1=less than 10,000 USD, 8=75,000 USD or higher', min_value=0, max_value=8)
+income = form.slider('score your income 1=less than 10,000 USD, 8=75,000 USD or higher', min_value=1, max_value=8)
 X.loc[1,21] = income
 
 model_select = form.selectbox('choose which model to use', ['Random Forest Model', 'Gradient Boost Model'])
