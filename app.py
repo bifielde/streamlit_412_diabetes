@@ -31,10 +31,9 @@ if chol_check:
 else:
     X.loc[1,3] = 0
 
-height = form.number_input('Enter your Height in inches')
-weight = form.number_input('Enter your weight in pounds')
-if height >1 and weight >1:
-    X.loc[1,4] = weight/height * 703
+height = form.number_input('Enter your Height in inches', min_value = 1)
+weight = form.number_input('Enter your weight in pounds', min_value = 1)
+X.loc[1,4] = weight/height * 703
 
 smoker = form.checkbox('are you a smoker?')
 if smoker:
