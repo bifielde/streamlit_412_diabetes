@@ -9,7 +9,8 @@ def load_model(model_name):
 rfm = load_model("best_rf_model.pkl")
 gbm = load_model("best_gb_model.pkl")
 X = pd.DataFrame()
-threshold = .35
+high_threshold = .35
+med_threshold = .25
 
 form = st.form(key = "input")
 form.header("Enter information below")
@@ -178,10 +179,12 @@ form_submit = form.form_submit_button('Submit form')
 if form_submit:
     if model_select == 'Random Forest Model':
         model_guess = rfm.predict_proba(X)[:, 1]
-        if model_guess > threshold:
-            st.write ("you may be at risk of diabetes. Please contact your primary care physician or a diabetes specialist and they may assist you further.")
+        if model_guess > high_threshold:
+            st.write ("you may be at high risk of diabetes. Please contact your primary care physician or a diabetes specialist and they may assist you further.")
+        elif model_guess > med_threshold:
+            st.write("you may be at increased risk of diabetes. Consider contacting your primary care physician or a diabetes specialist for recommendations on risk reduction.")
         else:
-            st.write ("You are not likely to be at risk of diabetes. Be sure to keep up with your regularyl scheduled doctor's appointments")
+            st.write ("You are currently not likely to be at risk of diabetes. Be sure to keep up with your regularly scheduled medical appointments for continued risk mitigation")
     elif model_select == 'Gradient Boost Model':
         model_guess = rfm.predict_proba(X)[:, 1]
         if model_guess > threshold:
