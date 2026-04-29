@@ -175,7 +175,7 @@ elif income == '$45,000-$75,000':
 elif income == '$75,000 or higher':
     X.loc[1,21] = 8
 
-model_select = form.selectbox('Choose which model to use', ['Random Forest Model', 'Gradient Boost Model', 'Multi-Layer Perceptron'])
+model_select = form.selectbox('Choose which model to use', ['Random Forest Model', 'Gradient Boost Model', 'Multi-Layer Perceptron','Combined Average Guess'])
 
 form_submit = form.form_submit_button('Submit form')
 
@@ -202,6 +202,20 @@ if form_submit:
         model_guess = mlp.predict_proba(X)[:, 1]
         #correction for MLP model output:
         model_guess = model_guess*100000000000000
+        st.write("model output:", model_guess)
+        if model_guess > high_threshold:
+            st.write ("you may be at high risk of diabetes. Please contact your primary care physician or a diabetes specialist and they may assist you further.")
+        elif model_guess > med_threshold:
+            st.write("you may be at increased risk of diabetes. Consider contacting your primary care physician or a diabetes specialist for recommendations on risk reduction.")
+        else:
+            st.write ("You are currently not likely to be at risk of diabetes. Be sure to keep up with your regularly scheduled medical appointments for continued risk mitigation")
+    elif model_select == 'Combined Average Guess':
+        model_guess_mlp = mlp.predict_proba(X)[:, 1]
+        #correction for MLP model output:
+        model_guess_mlp = model_guess_mlp*100000000000000
+        model_guess_gbm = gbm.predict_proba(X)[:, 1]
+        model_guess_rfm = rfm.predict_proba(X)[:, 1]
+        model_guess = (model_guess_mlp+model_guess_gbm+model_guess_rfm)/3
         st.write("model output:", model_guess)
         if model_guess > high_threshold:
             st.write ("you may be at high risk of diabetes. Please contact your primary care physician or a diabetes specialist and they may assist you further.")
