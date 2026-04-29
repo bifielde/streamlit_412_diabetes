@@ -101,7 +101,7 @@ X.loc[1,15] = menthealth
 physhealth = form.slider('How many days have you experienced an injury over the last month?', min_value=0, max_value=30)
 X.loc[1,16] = physhealth
 
-sex = form.radio('Select your sex:', ['male','female'])
+sex = form.radio('Select your sex:', ['Male','Female'])
 if sex == 'male':
     X.loc[1,17] = 0
 else:
