@@ -33,7 +33,7 @@ if chol_check:
 else:
     X.loc[1,3] = 0
 
-height = form.number_input('Enter your Height in inches', min_value = 1)
+height = form.number_input('Height-feet', min_value = 1)*12 + form.number_input('Height-inches', min_value = 0)
 weight = form.number_input('Enter your weight in pounds', min_value = 1)
 X.loc[1,4] = weight/height * 703
 
