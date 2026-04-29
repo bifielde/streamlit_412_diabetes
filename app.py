@@ -14,7 +14,7 @@ high_threshold = .35
 med_threshold = .25
 
 form = st.form(key = "input")
-form.header("Enter information below")
+form.header("Diabetes risk screening form - Please enter your information below")
 form.text('For checkbox questions, check the associated box if the answer is YES. Otherwise, leave the box blank. Please read all questions carefully and answer to the best of your knowledge.')
 high_BP = form.checkbox('Have you been diagnosed with high blood pressure?')
 if high_BP:
