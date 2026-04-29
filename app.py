@@ -194,7 +194,7 @@ if form_submit:
             st.write("you may be at increased risk of diabetes. Consider contacting your primary care physician or a diabetes specialist for recommendations on risk reduction.")
         else:
             st.write ("You are currently not likely to be at risk of diabetes. Be sure to keep up with your regularly scheduled medical appointments for continued risk mitigation")
-    elif model_select == 'Multi-Layer Perceptronl':
+    elif model_select == 'Multi-Layer Perceptron':
         model_guess = mlp.predict_proba(X)[:, 1]
         if model_guess > high_threshold:
             st.write ("you may be at high risk of diabetes. Please contact your primary care physician or a diabetes specialist and they may assist you further.")
