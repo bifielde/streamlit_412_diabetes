@@ -38,7 +38,7 @@ height = form.number_input('Height-feet', min_value = 1)*12 + form.number_input(
 weight = form.number_input('Enter your weight in pounds', min_value = 1)
 X.loc[1,4] = weight/height * 703
 
-smoker = form.checkbox('are you a smoker?')
+smoker = form.checkbox('Are you a smoker?')
 if smoker:
     X.loc[1,5] = 1
 else:
@@ -56,49 +56,49 @@ if hdoa:
 else:
     X.loc[1,7] = 0
 
-phys_act = form.checkbox('would you consider yourself physically active?')
+phys_act = form.checkbox('Would you consider yourself physically active?')
 if phys_act:
     X.loc[1,8] = 1
 else:
     X.loc[1,8] = 0
 
-fruits = form.checkbox('do you regularly eat fruits?')
+fruits = form.checkbox('Do you regularly eat fruits?')
 if fruits:
     X.loc[1,9] = 1
 else:
     X.loc[1,9] = 0
 
-veggies = form.checkbox('do you regurlarly eat vegetables?')
+veggies = form.checkbox('Do you regurlarly eat vegetables?')
 if veggies:
     X.loc[1,10] = 1
 else:
     X.loc[1,10] = 0
 
-heavy_alc = form.checkbox('do you have more than 3 alcoholic drinks/week?')
+heavy_alc = form.checkbox('Do you have more than 3 alcoholic drinks/week?')
 if heavy_alc:
     X.loc[1,11] = 1
 else:
     X.loc[1,11] = 0
 
-healthcare = form.checkbox('do you have any sort of healthcare?')
+healthcare = form.checkbox('Do you have any sort of healthcare?')
 if healthcare:
     X.loc[1,12] = 1
 else:
     X.loc[1,12] = 0
 
-nodocbccost = form.checkbox('have you NOT been to a doctor due to cost?')
+nodocbccost = form.checkbox('Have you NOT been to a doctor due to cost?')
 if nodocbccost:
     X.loc[1,13] = 1
 else:
     X.loc[1,13] = 0
 
-genhealth = form.slider('score your general health on a scale of 1-5, with 1=excellent, 5=poor', min_value=1, max_value=5)
+genhealth = form.slider('Score your general health on a scale of 1-5, with 1=excellent, 5=poor', min_value=1, max_value=5)
 X.loc[1,14] = genhealth
 
 menthealth = form.slider('How many days have you had poor mental health over the past month?', min_value=0, max_value=30)
 X.loc[1,15] = menthealth
 
-physhealth = form.slider('how many days have you experienced an injury over the last month?', min_value=0, max_value=30)
+physhealth = form.slider('How many days have you experienced an injury over the last month?', min_value=0, max_value=30)
 X.loc[1,16] = physhealth
 
 sex = form.radio('Select your sex:', ['male','female'])
@@ -107,7 +107,7 @@ if sex == 'male':
 else:
     X.loc[1,17] = 1
 
-diff_walk = form.checkbox('do you have difficulty walking?')
+diff_walk = form.checkbox('Do you have difficulty walking?')
 if diff_walk:
     X.loc[1,18] = 1
 else:
@@ -141,7 +141,7 @@ elif age >= 25:
 else:
     X.loc[1,19] = 1
 
-education = form.selectbox('choose your education level:', ['Kindergarten or no school','Elementary school','Some high school','High school graduate or GED','Some college or technical school','College graduate or higher'])
+education = form.selectbox('Select your education level:', ['Kindergarten or no school','Elementary school','Some high school','High school graduate or GED','Some college or technical school','College graduate or higher'])
 if education == 'Kindergarten or no school':
     X.loc[1,20] = 1
 elif education == 'Elementary school':
@@ -156,7 +156,7 @@ elif education == 'College graduate or higher':
     X.loc[1,20] = 6
 
 
-income = form.selectbox('choose your income range', ['less than $10,000','$10,000-$15,000','$15,000-$20,000', '$25,000-$30,000', '30,000-$35,000', '$35,000-$45,000', '$45,000-$75,000', '$75,000 or higher'])
+income = form.selectbox('Select your income range', ['less than $10,000','$10,000-$15,000','$15,000-$20,000', '$25,000-$30,000', '30,000-$35,000', '$35,000-$45,000', '$45,000-$75,000', '$75,000 or higher'])
 if income == 'less than $10,000':
     X.loc[1,21] = 1
 elif income == '$10,000-$15,000':
@@ -174,7 +174,7 @@ elif income == '$45,000-$75,000':
 elif income == '$75,000 or higher':
     X.loc[1,21] = 8
 
-model_select = form.selectbox('choose which model to use', ['Random Forest Model', 'Gradient Boost Model', 'Multi-Layer Perceptron'])
+model_select = form.selectbox('Choose which model to use', ['Random Forest Model', 'Gradient Boost Model', 'Multi-Layer Perceptron'])
 
 form_submit = form.form_submit_button('Submit form')
 
