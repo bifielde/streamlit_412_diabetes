@@ -182,6 +182,7 @@ form_submit = form.form_submit_button('Submit form')
 if form_submit:
     if model_select == 'Random Forest Model':
         model_guess = rfm.predict_proba(X)[:, 1]
+        st.write("model output:", model_guess)
         if model_guess > high_threshold:
             st.write ("you may be at high risk of diabetes. Please contact your primary care physician or a diabetes specialist and they may assist you further.")
         elif model_guess > med_threshold:
@@ -190,6 +191,7 @@ if form_submit:
             st.write ("You are currently not likely to be at risk of diabetes. Be sure to keep up with your regularly scheduled medical appointments for continued risk mitigation")
     elif model_select == 'Gradient Boost Model':
         model_guess = gbm.predict_proba(X)[:, 1]
+        st.write("model output:", model_guess)
         if model_guess > high_threshold:
             st.write ("you may be at high risk of diabetes. Please contact your primary care physician or a diabetes specialist and they may assist you further.")
         elif model_guess > med_threshold:
@@ -198,6 +200,7 @@ if form_submit:
             st.write ("You are currently not likely to be at risk of diabetes. Be sure to keep up with your regularly scheduled medical appointments for continued risk mitigation")
     elif model_select == 'Multi-Layer Perceptron':
         model_guess = mlp.predict_proba(X)[:, 1]
+        st.write("model output:", model_guess)
         if model_guess > high_threshold:
             st.write ("you may be at high risk of diabetes. Please contact your primary care physician or a diabetes specialist and they may assist you further.")
         elif model_guess > med_threshold:
