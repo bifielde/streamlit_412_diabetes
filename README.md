@@ -37,7 +37,7 @@ To achieve this, we simply loaded all three models and added a drop down menu to
 
 We hope you find the experience to be straightforward and without issue! 
 Please remember that while this dataset (and as a result, our application) is based off an actual CDC study, the prediction may not be wholly accurate to your own personal diabetic risk.
-We are data analysts, not doctors, and this tool is NOT INTENDED TO REPLACE ACTUAL DIAGNOSES.
+We are data analysts, not doctors, and this tool is NOT INTENDED TO REPLACE AN ACTUAL DIAGNOSIS.
 
 Thank you for your time, and enjoy the app!
 # [Link to streamlit](https://ryjmjdxgjcf3wmti4jvksz.streamlit.app/)
