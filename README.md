@@ -40,3 +40,4 @@ Please remember that while this dataset (and as a result, our application) is ba
 We are data analysts, not doctors, and this tool is NOT INTENDED TO REPLACE ACTUAL DIAGNOSES.
 
 Thank you for your time, and enjoy the app!
+# [Link to streamlit](https://ryjmjdxgjcf3wmti4jvksz.streamlit.app/)
